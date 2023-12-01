@@ -9,10 +9,19 @@ st.set_page_config(page_title="StockMKT", page_icon=":bar_chart:", layout="wide"
 st.title("StockMKT")
 st.markdown("##")
 
-def create_table(n=7):
-    df = pd.DataFrame({"x": range(1, 11), "y": n})
-    df['x*y'] = df.x * df.y
-    return df
+
+@st.cache(persist=True)
+def get_data():
+df = pd.DataFrame(
+np.random.randn(200, 3),
+columns=['a', 'b', 'c'])
+return df
+df = get_data()
+# st.table(df)
+st.dataframe(df)
+st.line_chart(df)
+st.area_chart(df)
+st.bar_chart(df)
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
 if my_slider:f"stock price changes by {my_slider * 2 + 0.5 + my_slider ** 1.5} when customer satisfaction is {my_slider}"
