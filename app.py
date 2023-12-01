@@ -5,14 +5,7 @@ import numpy as np
 # ---- MAINPAGE ----
 @st.cache
 def get_data_from_excel():
-    df = pd.read_excel(
-        io="https://github.com/garyzhan1/StockMKT1/blob/main/supermarkt_sales.xlsx",
-        engine="openpyxl",
-        sheet_name="Sales",
-        skiprows=3,
-        usecols="B:R",
-        nrows=1000,
-    )
+    df = pd.read_excel(supermarkt_sales.xlsx)
     # Add 'hour' column to dataframe
     df["hour"] = pd.to_datetime(df["Time"], format="%H:%M:%S").dt.hour
     return df
