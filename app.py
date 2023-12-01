@@ -1,26 +1,19 @@
 import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
+if 'chat' not in st.session_state:
+    st.session_state.chat = [('A','Hello.')]
 
-# ---- SIDEBAR ----
-st.sidebar.header("Please Filter Here:")
-city = st.sidebar.multiselect(
-    "Select the City:",
-    options=df["City"].unique(),
-    default=df["City"].unique()
-)
+def submit():
+    st.session_state.chat.append(('B',st.session_state.B))
+    st.session_state.chat.append(('A','Some response.'))
+    # Clear the text input widget for convenience
+    st.session_state.B = ''
 
-customer_type = st.sidebar.multiselect(
-    "Select the Customer Type:",
-    options=df["Customer_type"].unique(),
-    default=df["Customer_type"].unique(),
-)
+for entry in st.session_state.chat:
+    st.write(f'{entry[0]}: {entry[1]}')
 
-gender = st.sidebar.multiselect(
-    "Select the Gender:",
-    options=df["Gender"].unique(),
-    default=df["Gender"].unique()
-)
+st.text_input('B\'s Response', key='B', on_change=submit)
 
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
