@@ -6,16 +6,6 @@ chart_data = pd.DataFrame(
     np.random.randn(200, 3),
     columns=['a', 'b', 'c'])
 
-st.vega_lite_chart(chart_data, {
-    'mark': {'type': 'circle', 'tooltip': True},
-    'encoding': {
-        'x': {'field': 'a', 'type': 'quantitative'},
-        'y': {'field': 'b', 'type': 'quantitative'},
-        'size': {'field': 'c', 'type': 'quantitative'},
-        'color': {'field': 'c', 'type': 'quantitative'},
-    },
-})
-
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
 if my_slider:f"stock price changes by {my_slider * 2 + 0.5 + my_slider ** 1.5} when customer satisfaction is {my_slider}"
