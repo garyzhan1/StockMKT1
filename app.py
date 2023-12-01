@@ -1,19 +1,20 @@
 import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
-if 'chat' not in st.session_state:
-    st.session_state.chat = [('A','Hello.')]
 
-def submit():
-    st.session_state.chat.append(('B',st.session_state.B))
-    st.session_state.chat.append(('A','Some response.'))
-    # Clear the text input widget for convenience
-    st.session_state.B = ''
+chart_data = pd.DataFrame(
+    np.random.randn(200, 3),
+    columns=['a', 'b', 'c'])
 
-for entry in st.session_state.chat:
-    st.write(f'{entry[0]}: {entry[1]}')
-
-st.text_input('B\'s Response', key='B', on_change=submit)
+st.vega_lite_chart(chart_data, {
+    'mark': {'type': 'circle', 'tooltip': True},
+    'encoding': {
+        'x': {'field': 'a', 'type': 'quantitative'},
+        'y': {'field': 'b', 'type': 'quantitative'},
+        'size': {'field': 'c', 'type': 'quantitative'},
+        'color': {'field': 'c', 'type': 'quantitative'},
+    },
+})
 
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
