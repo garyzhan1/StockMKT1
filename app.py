@@ -2,26 +2,43 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-# emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
-st.set_page_config(page_title="StockMKT", page_icon=":bar_chart:", layout="wide")
-
 # ---- MAINPAGE ----
-st.title("StockMKT")
-st.markdown("##")
+@st.cache
+def get_data_from_excel():
+    df = pd.read_excel(
+        io="C:\zg\code\streamlit-sales-dashboard-main\supermarkt_sales.xlsx",
+        engine="openpyxl",
+        sheet_name="Sales",
+        skiprows=3,
+        usecols="B:R",
+        nrows=1000,
+    )
+    # Add 'hour' column to dataframe
+    df["hour"] = pd.to_datetime(df["Time"], format="%H:%M:%S").dt.hour
+    return df
 
+df = get_data_from_excel()
 
-@st.cache(persist=True)
-def get_data():
-df = pd.DataFrame(
-np.random.randn(200, 3),
-columns=['a', 'b', 'c'])
-return df
-df = get_data()
-# st.table(df)
-st.dataframe(df)
-st.line_chart(df)
-st.area_chart(df)
-st.bar_chart(df)
+# ---- SIDEBAR ----
+st.sidebar.header("Please Filter Here:")
+city = st.sidebar.multiselect(
+    "Select the City:",
+    options=df["City"].unique(),
+    default=df["City"].unique()
+)
+
+customer_type = st.sidebar.multiselect(
+    "Select the Customer Type:",
+    options=df["Customer_type"].unique(),
+    default=df["Customer_type"].unique(),
+)
+
+gender = st.sidebar.multiselect(
+    "Select the Gender:",
+    options=df["Gender"].unique(),
+    default=df["Gender"].unique()
+)
+
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
 if my_slider:f"stock price changes by {my_slider * 2 + 0.5 + my_slider ** 1.5} when customer satisfaction is {my_slider}"
