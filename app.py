@@ -1,8 +1,6 @@
 import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
-import pandas_datareader as pdr
-import pandas_datareader.data as web
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="股票预测平台 战老师", page_icon=":bar_chart:", layout="wide")
