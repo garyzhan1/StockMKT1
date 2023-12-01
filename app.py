@@ -6,7 +6,7 @@ import numpy as np
 @st.cache
 def get_data_from_excel():
     df = pd.read_excel(
-        io="supermarkt_sales.xlsx",
+        io="https://github.com/garyzhan1/StockMKT1/blob/main/supermarkt_sales.xlsx",
         engine="openpyxl",
         sheet_name="Sales",
         skiprows=3,
