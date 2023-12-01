@@ -5,14 +5,6 @@ import numpy as np
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="StockMKT", page_icon=":bar_chart:", layout="wide")
 
-
-st.set_page_config(
-   page_title="Ex-stream-ly Cool App",
-   page_icon="🧊",
-   layout="wide",
-   initial_sidebar_state="expanded",
-)
-
 # ---- MAINPAGE ----
 st.title("StockMKT")
 st.markdown("##")
