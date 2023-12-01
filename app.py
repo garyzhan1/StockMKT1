@@ -9,17 +9,12 @@ chart_data = pd.DataFrame(
 df = pd.DataFrame(np.random.randn(50, 20), columns=("col %d" % i for i in range(20)))
 st.dataframe(df)  # Same as st.write(df)
 
-df2 = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-    columns=['lat', 'lon'])
+col1, col2 = st.columns(2)
+col1.write("This is column 1")
+col2.write("This is column 2")
 
-st.map(df2)
-
-df3 = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4],
-    columns=['lat', 'lon'])
-
-st.map(df3, size=20, color='#0044ff')
+# Three different columns:
+col1, col2, col3 = st.columns([3, 1, 1])
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
 if my_slider:f"stock price changes by {my_slider * 2 + 0.5 + my_slider ** 1.5} when customer satisfaction is {my_slider}"
