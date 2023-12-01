@@ -2,11 +2,12 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=['a', 'b', 'c'])
+df = pd.DataFrame(
+    np.random.randn(10, 5),
+    columns=('第%d列' % (i+1) for i in range(5))
+)
 
-st.line_chart(chart_data)
+st.table(df)
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
 if my_slider:f"stock price changes by {my_slider * 2 + 0.5 + my_slider ** 1.5} when customer satisfaction is {my_slider}"
