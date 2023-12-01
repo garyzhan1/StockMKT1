@@ -19,9 +19,9 @@ my_slider = st.slider("brand",0,100,50,1)
 if my_slider:f"stock price rises by {my_slider * 2 + 0.5 + my_slider ** 1.5} when brand value is {my_slider}"
 
 col1, col2, col3 = st.columns(3)
-col1.metric("Temperature", "70 °F", "1.2 °F")
-col2.metric("Wind", "9 mph", "-8%")
-col3.metric("Humidity", "86%", "4%")
+col1.metric("cusotmer satisfaction", "1.5", "5%")
+col2.metric("brand", "2.5", "-8%")
+col3.metric("new product development", "3", "4%")
 
 chart_data = pd.DataFrame(
     np.random.randn(50, 3),
