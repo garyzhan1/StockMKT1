@@ -13,12 +13,6 @@ my_slider = st.slider("Customer satisfaction",0,100,50,1)
 my_slider2 = st.slider("new product",0,100,50,1)
 if my_slider:f"stock price changes by {my_slider * 2 + 0.5 + my_slider2 ** 1.5} when customer satisfaction is {my_slider}"
 
-my_slider = st.slider("new product",0,100,50,1)
-if my_slider:f"stock prices by {my_slider * 2 + 0.5 + my_slider ** 1.5} when the firm annanced {my_slider} new products"
-
-my_slider = st.slider("brand",0,100,50,1)
-if my_slider:f"stock price rises by {my_slider * 2 + 0.5 + my_slider ** 1.5} when brand value is {my_slider}"
-
 col1, col2, col3 = st.columns(3)
 col1.metric("cusotmer satisfaction", "1.5", "5%")
 col2.metric("brand", "2.5", "-8%")
