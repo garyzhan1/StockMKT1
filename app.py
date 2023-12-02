@@ -2,9 +2,15 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-df = pd.DataFrame(
-    np.random.randn(10, 5),
-    columns=('column %d' % (i+1) for i in range(5))
+data_df = pd.DataFrame(
+    {
+        "sales": [
+            [0, 4, 26, 80, 100, 40],
+            [80, 20, 80, 35, 40, 100],
+            [10, 20, 80, 80, 70, 0],
+            [10, 100, 20, 100, 30, 100],
+        ],
+    }
 )
 
 st.dataframe(df.style.highlight_max(axis=0))
