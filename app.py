@@ -4,7 +4,10 @@ import numpy as np
 
 my_slider = st.slider("a pioneering innovation",0,10,0,1)
 my_slider2 = st.slider("new market entries",0,20,0,1)
-if my_slider:f"stock price changes by {my_slider * 0.0428 + my_slider2 * 0.0098} when having {my_slider} minor updates"
+my_slider3 = st.slider("minor updates",0,100,0,1)
+my_slider4 = st.slider("advertising for new product introduction (million USD)",0,200,0,1)
+my_slider5 = st.slider("qaulity improvement (%)",0,100,0,1)
+if my_slider:f"stock price changes by {my_slider * 0.0428 + my_slider2 * 0.0098 + my_slider3 * 0.0055 + my_slider4 * 0.0001 + my_slider5 * 0.042}"
 
 st.write("data in a table:")
 st.write(pd.DataFrame({
