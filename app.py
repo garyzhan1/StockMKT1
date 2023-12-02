@@ -2,7 +2,7 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-data_df = pd.DataFrame(
+df = pd.DataFrame(
     {
         "sales": [
             [0, 4, 26, 80, 100, 40],
