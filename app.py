@@ -4,10 +4,16 @@ import numpy as np
 
 df = pd.DataFrame(
     np.random.randn(10, 5),
-    columns=('第%d列' % (i+1) for i in range(5))
+    columns=('rate %d' % (i+1) for i in range(5))
 )
 
 st.dataframe(df.style.highlight_max(axis=0))
+
+st.write("data in a table:")
+st.write(pd.DataFrame({
+    'first column': [1, 3, 5, 7],
+    'second column': [10, 30, 50, 70]
+}))
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
 my_slider2 = st.slider("new product",0,20,10,1)
