@@ -34,13 +34,6 @@ col2.metric("brand", "2.5", "-8%")
 col3.metric("new product development", "3", "4%")
 
 chart_data = pd.DataFrame(
-    'first column': [1, my_slider, 5, 7],
-    'second column': [10, 30, my_slider2, 70],
-    '3ond column': [10, 30, my_slider2, 70],
-    columns = ["a", "b", "c"])
-st.bar_chart(chart_data)
-
-chart_data = pd.DataFrame(
     np.random.randn(20, 3),
     columns=['a', 'b', 'c'])
 
