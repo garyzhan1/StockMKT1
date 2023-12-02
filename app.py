@@ -9,7 +9,7 @@ df = pd.DataFrame(
 
 st.dataframe(df.style.highlight_max(axis=0))
 
-data2=pd.read_csv(pd.read_csv("pd.read_csv("https://github.com/garyzhan1/StockMKT1/blob/main/supermarkt_sales.csv")",sep=",|:|;",engine="python",header=0,encoding='gbk')
+data2=pd.read_csv(pd.read_csv("pd.read_csv("https://github.com/garyzhan1/StockMKT1/blob/main/supermarkt_sales.csv",sep=",|:|;",engine="python",header=0,encoding='gbk')
 st.sidebar.header("请在这里筛选:")
 country = st.sidebar.selectbox(
     "选择国家:",
