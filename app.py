@@ -3,9 +3,9 @@ import streamlit as st  # pip install streamlit
 import numpy as np
 
 
-my_slider = st.slider("a pioneering innovation",0,10,0,1)
-my_slider2 = st.slider("new market entries",0,20,0,1)
-if my_slider:f"stock price changes by {my_slider * 0.0428 + my_slider2 * 0.0098} when having {my_slider} minor updates"
+a = st.slider("a pioneering innovation",0,10,0,1)
+b = st.slider("new market entries",0,20,0,1)
+if my_slider:f"stock price changes by {a * 0.0428 + b * 0.0098} when having {my_slider} minor updates"
 
 st.write("data in a table:")
 st.write(pd.DataFrame({
