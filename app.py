@@ -7,15 +7,29 @@ df = pd.DataFrame(
     columns=('rate %d' % (i+1) for i in range(5))
 )
 
-st.dataframe(df.style.highlight_max(axis=0))
+@st.cache
+def get_data_from_excel():
+    df2 = pd.read_excel(
+        io="supermarkt_sales.xlsx",
+        engine="openpyxl",
+        sheet_name="Sales",
+        skiprows=3,
+        usecols="B:R",
+        nrows=1000,
+    )
+    # Add 'hour' column to dataframe
+    df["hour"] = pd.to_datetime(df["Time"], format="%H:%M:%S").dt.hour
+    return df
 
-data2=pd.read_csv("https://github.com/garyzhan1/StockMKT1/blob/main/supermarkt_sales.csv")
-st.sidebar.header("请在这里筛选:")
-country = st.sidebar.selectbox(
-    "选择国家:",
-    options=sorted(data2['City'].unique()), # 单选框内容为location列数据
+df2 = get_data_from_excel()
+
+# ---- SIDEBAR ----
+st.sidebar.header("Please Filter Here:")
+city = st.sidebar.multiselect(
+    "Select the City:",
+    options=df2["City"].unique(),
+    default=df2["City"].unique()
 )
-
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
 my_slider2 = st.slider("new product",0,20,10,1)
