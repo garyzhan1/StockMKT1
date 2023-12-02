@@ -7,21 +7,8 @@ df = pd.DataFrame(
     columns=('rate %d' % (i+1) for i in range(5))
 )
 
-@st.cache
-def get_data_from_excel():
-    df2 = pd.read_excel(
-        io="supermarkt_sales.xlsx",
-        engine="openpyxl",
-        sheet_name="Sales",
-        skiprows=3,
-        usecols="B:R",
-        nrows=1000,
-    )
-    # Add 'hour' column to dataframe
-    df["hour"] = pd.to_datetime(df["Time"], format="%H:%M:%S").dt.hour
-    return df
-
-df2 = get_data_from_excel()
+df2 = pd.read_excel(r'supermarkt_sales.xlsx')
+print(df2)
 
 # ---- SIDEBAR ----
 st.sidebar.header("Please Filter Here:")
