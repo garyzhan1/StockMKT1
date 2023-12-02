@@ -8,7 +8,7 @@ b = st.slider("new market entries",0,20,0,1)
 c = st.slider("minor updates",0,100,0,1)
 d = st.slider("advertising for new product introduction (million USD)",0,200,0,1)
 e = st.slider("qaulity improvement (%)",0,100,0,1)
-if my_slider:f"stock price changes by {a * 4.28% + b*0.98% + c* 0.55% + d* 0.1% +  e* 4.2%+0} when having {c} minor updates"
+if my_slider:f"stock price changes by {a * 4.28% + b * 0.98% + c * 0.55% + d * 0.1% +  e * 4.2% + 0} when having {c} minor updates"
 
 st.write("data in a table:")
 st.write(pd.DataFrame({
