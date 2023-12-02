@@ -10,14 +10,6 @@ df = pd.DataFrame(
 df2 = pd.read_excel(r'supermarkt_sales.xlsx')
 print(df2)
 
-# ---- SIDEBAR ----
-st.sidebar.header("Please Filter Here:")
-city = st.sidebar.multiselect(
-    "Select the City:",
-    options=df2["City"].unique(),
-    default=df2["City"].unique()
-)
-
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
 my_slider2 = st.slider("new product",0,20,10,1)
 my_slider3 = st.slider("brand",0,100,50,1)
