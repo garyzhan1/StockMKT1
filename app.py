@@ -9,11 +9,11 @@ df = pd.DataFrame(
 
 st.dataframe(df.style.highlight_max(axis=0))
 
-data = pd.read_csv('supermarkt_sales.csv')
+data1 = pd.read_csv('supermarkt_sales.csv')
 st.sidebar.header("请在这里筛选:")
 country = st.sidebar.selectbox(
     "选择国家:",
-    options=sorted(data['City'].unique()), # 单选框内容为location列数据
+    options=sorted(data1['City'].unique()), # 单选框内容为location列数据
 )
 
 
