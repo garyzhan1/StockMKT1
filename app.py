@@ -3,14 +3,8 @@ import streamlit as st  # pip install streamlit
 import numpy as np
 
 df = pd.DataFrame(
-    {
-        "sales": [
-            [0, 4, 26, 80, 100, 40],
-            [80, 20, 80, 35, 40, 100],
-            [10, 20, 80, 80, 70, 0],
-            [10, 100, 20, 100, 30, 100],
-        ],
-    }
+    np.random.randn(10, 5),
+    columns=('第%d列' % (i+1) for i in range(5))
 )
 
 st.dataframe(df.style.highlight_max(axis=0))
@@ -29,6 +23,12 @@ chart_data = pd.DataFrame(
     np.random.randn(50, 3),
     columns = ["a", "b", "c"])
 st.bar_chart(chart_data)
+
+chart_data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c'])
+
+st.line_chart(chart_data)
 
 # ---- HIDE STREAMLIT STYLE ----
 hide_st_style = """
