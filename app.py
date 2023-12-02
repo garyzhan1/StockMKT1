@@ -2,10 +2,6 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-df = pd.DataFrame(
-    np.random.randn(10, 5),
-    columns=('rate %d' % (i+1) for i in range(5))
-)
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
 my_slider2 = st.slider("new product",0,20,10,1)
