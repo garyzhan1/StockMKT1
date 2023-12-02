@@ -10,7 +10,8 @@ df = pd.DataFrame(
 st.dataframe(df.style.highlight_max(axis=0))
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
-my_slider2 = st.slider("new product",0,100,50,1)
+my_slider2 = st.slider("new product",0,20,10,1)
+my_slider3 = st.slider("brand",0,100,50,1)
 if my_slider:f"stock price changes by {my_slider * 2 + 0.5 + my_slider2 ** 1.5} when customer satisfaction is {my_slider}"
 
 col1, col2, col3 = st.columns(3)
