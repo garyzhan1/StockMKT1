@@ -7,7 +7,7 @@ df = pd.DataFrame(
     columns=('rate %d' % (i+1) for i in range(5))
 )
 
-df2 = pd.read_excel(r'supermarkt_sales.xlsx')
+df2 = pd.read_excel(r'https://github.com/garyzhan1/StockMKT1/blob/main/supermarkt_sales.csv')
 print(df2)
 
 my_slider = st.slider("Customer satisfaction",0,100,50,1)
