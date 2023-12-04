@@ -2,6 +2,14 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
+st.sidebar.button('显示网页1', key='page1')
+st.sidebar.button('显示网页2', key='page2')
+# 根据按钮点击状态显示相应内容
+if st.sidebar.button('显示网页1', key='page1'):
+    st.write('这是网页1的内容')
+elif st.sidebar.button('显示网页2', key='page2'):
+    st.write('这是网页2的内容')
+    
 my_slider = st.slider("a pioneering innovation",0,10,0,1)
 my_slider2 = st.slider("new market entries",0,20,0,1)
 my_slider3 = st.slider("minor updates",0,100,0,1)
