@@ -2,23 +2,19 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-with st.container():
-   st.write("product-related factors")
-   my_slider = st.slider("a pioneering innovation",0,10,0,1)
-   my_slider2 = st.slider("new market entries",0,20,0,1)
-   my_slider3 = st.slider("minor updates",0,100,0,1)
-   my_slider4 = st.slider("advertising for new product introduction (million USD)",0,200,0,1)
-   my_slider5 = st.slider("qaulity improvement (%)",0,100,0,1)
-   if my_slider:f"stock price will change by {my_slider * 0.0428 + my_slider2 * 0.0098 + my_slider3 * 0.0055 + my_slider4 * 0.0001 + my_slider5 * 0.042}"
+st.header('Product-related factors', divider='rainbow')
 
-st.header('note: ..............', divider='rainbow')
-    
-st.write("trademark")
+my_slider = st.slider("a pioneering innovation",0,10,0,1)
+my_slider2 = st.slider("new market entries",0,20,0,1)
+my_slider3 = st.slider("minor updates",0,100,0,1)
+my_slider4 = st.slider("advertising for new product introduction (million USD)",0,200,0,1)
+my_slider5 = st.slider("qaulity improvement (%)",0,100,0,1)
+if my_slider:f"stock price will change by {my_slider * 0.0428 + my_slider2 * 0.0098 + my_slider3 * 0.0055 + my_slider4 * 0.0001 + my_slider5 * 0.042}"
+
+st.header('trademark', divider='rainbow')
 
 my_slider6 = st.slider("a brand-association trade mark",0,10,0,1)
 if my_slider:f"stock price will change by {my_slider6 * 0.003}"
-
-st.header('note: ..............', divider='rainbow')
 
 
 col1, col2, col3 = st.columns(3)
