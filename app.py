@@ -4,8 +4,8 @@ import numpy as np
 
 with st.container():
    st.write("This is inside the container")
-    container.my_slider = st.slider("a pioneering innovation",0,10,0,1)
-    container.my_slider2 = st.slider("new market entries",0,20,0,1)
+   container.my_slider = st.slider("a pioneering innovation",0,10,0,1)
+   container.my_slider2 = st.slider("new market entries",0,20,0,1)
    container.my_slider3 = st.slider("minor updates",0,100,0,1)
    container.my_slider4 = st.slider("advertising for new product introduction (million USD)",0,200,0,1)
    container.my_slider5 = st.slider("qaulity improvement (%)",0,100,0,1)
