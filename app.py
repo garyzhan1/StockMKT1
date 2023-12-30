@@ -11,14 +11,20 @@ my_slider4 = st.slider("advertising for new product introduction (million USD)",
 my_slider5 = st.slider("qaulity improvement (%)",0,100,0,1)
 if my_slider:f"stock price will change by {my_slider * 0.0428 + my_slider2 * 0.0098 + my_slider3 * 0.0055 + my_slider4 * 0.0001 + my_slider5 * 0.042}"
 
-st.write("——————————————————————————————————————————————————————————————————————————————————————————————")
-
+col1, col2, col3 = st.columns(3)
+col1.metric("cusotmer satisfaction", "1.5", "5%")
+col2.metric("brand", "2.5", "-8%")
+col3.metric("new product development", "3", "4%")
+    
 st.write("trademark")
 
 my_slider6 = st.slider("a brand-association trade mark",0,10,0,1)
 if my_slider:f"stock price will change by {my_slider6 * 0.003}"
 
-st.write("——————————————————————————————————————————————————————————————————————————————————————————————")
+col1, col2, col3 = st.columns(3)
+col1.metric("cusotmer satisfaction", "1.5", "5%")
+col2.metric("brand", "2.5", "-8%")
+col3.metric("new product development", "3", "4%")
 
 st.write("data in a table:")
 st.write(pd.DataFrame({
@@ -26,10 +32,6 @@ st.write(pd.DataFrame({
     'second column': [10, 30, my_slider2, 70]
 }))
 
-col1, col2, col3 = st.columns(3)
-col1.metric("cusotmer satisfaction", "1.5", "5%")
-col2.metric("brand", "2.5", "-8%")
-col3.metric("new product development", "3", "4%")
 
 chart_data = pd.DataFrame(
     np.random.randn(20, 3),
