@@ -3,7 +3,7 @@ import streamlit as st  # pip install streamlit
 import numpy as np
 
 with st.container():
-   st.write("This is inside the container")
+   st.write("product-related factors")
    my_slider = st.slider("a pioneering innovation",0,10,0,1)
    my_slider2 = st.slider("new market entries",0,20,0,1)
    my_slider3 = st.slider("minor updates",0,100,0,1)
@@ -18,8 +18,8 @@ st.write("trademark")
 my_slider6 = st.slider("a brand-association trade mark",0,10,0,1)
 if my_slider:f"stock price will change by {my_slider6 * 0.003}"
 
+st.header('note: ..............', divider='rainbow')
 
-st.header('', divider='rainbow')
 
 col1, col2, col3 = st.columns(3)
 col1.metric("cusotmer satisfaction", "1.5", "5%")
