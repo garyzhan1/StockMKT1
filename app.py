@@ -11,7 +11,7 @@ with st.container():
    my_slider5 = st.slider("qaulity improvement (%)",0,100,0,1)
    if my_slider:f"stock price will change by {my_slider * 0.0428 + my_slider2 * 0.0098 + my_slider3 * 0.0055 + my_slider4 * 0.0001 + my_slider5 * 0.042}"
 
-st.header('', divider='rainbow')
+st.header('note: ..............', divider='rainbow')
     
 st.write("trademark")
 
