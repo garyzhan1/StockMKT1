@@ -16,11 +16,16 @@ st.header('trademark', divider='rainbow')
 my_slider6 = st.slider("a brand-association trade mark",0,10,0,1)
 if my_slider:f"stock price will change by {my_slider6 * 0.003}"
 
+col4, col5 = st.columns(2)
+col4.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009).: Evaluating the financial impact of branding using trademarks: A framework and empirical evidence.")
+col5.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009).: Evaluating the financial impact of branding using trademarks: A framework and empirical evidence.")
 
 col1, col2, col3 = st.columns(3)
 col1.metric("cusotmer satisfaction", "1.5", "5%")
 col2.metric("brand", "2.5", "-8%")
 col3.metric("new product development", "3", "4%")
+
+
 
 st.write("data in a table:")
 st.write(pd.DataFrame({
