@@ -6,12 +6,12 @@ tab1, tab2, tab3 = st.tabs(["product", "trademark", "cs"])
 
 with tab1:
    st.header('Product-related factor', divider='rainbow')
-   my_slider = st.slider("a pioneering innovation",0,10,0,1)
+   my_slider1 = st.slider("a pioneering innovation",0,10,0,1)
    my_slider2 = st.slider("new market entries",0,20,0,1)
    my_slider3 = st.slider("minor updates",0,100,0,1)
    my_slider4 = st.slider("advertising for new product introduction (million USD)",0,200,0,1)
    my_slider5 = st.slider("qaulity improvement (%)",0,100,0,1)
-   if my_slider:f"stock price will change by {my_slider * 4.28 + my_slider2 * 0.0098 + my_slider3 * 0.0055 + my_slider4 * 0.0001 + my_slider5 * 0.042}%"
+   if my_slider:f"stock price will change by {my_slider1 * 4.28 + my_slider2 * 0.0098 + my_slider3 * 0.0055 + my_slider4 * 0.0001 + my_slider5 * 0.042}%"
 
 with tab2:
    st.header('trademark', divider='rainbow')
