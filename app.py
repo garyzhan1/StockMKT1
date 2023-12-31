@@ -16,7 +16,7 @@ with tab1:
 with tab2:
    st.header('trademark', divider='rainbow')
    my_slider6 = st.slider("a brand-association trade mark",0,10,0,1)
-   if my_slider6"stock price will change by {my_slider6 * 0.003}"
+   if my_slider:6"stock price will change by {my_slider6 * 0.003}"
    col4, col5 = st.columns(2)
    col4.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009).: Evaluating the financial impact of branding using trademarks: A framework and empirical evidence.")
    col5.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009).: Evaluating the financial impact of branding using trademarks: A framework and empirical evidence.")
