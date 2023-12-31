@@ -18,8 +18,8 @@ with tab2:
    my_slider6 = st.slider("a brand-association trade mark",0,10,0,1)
    if my_slider:f"stock price will change by {my_slider6 * 0.3}%"
    col4, col5 = st.columns(2)
-   col4.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009).: Evaluating the financial impact of branding using trademarks: A framework and empirical evidence.")
-   col5.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009).: Evaluating the financial impact of branding using trademarks: A framework and empirical evidence.")
+   col4.write("The parameter used in the prediction was developed on the basis of:")
+   col5.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009). Evaluating the financial impact of branding using trademarks: A framework and empirical evidence. Journal of Marketing, 73(6), 154-166.")
 
 col1, col2, col3 = st.columns(3)
 col1.metric("cusotmer satisfaction", "1.5", "5%")
