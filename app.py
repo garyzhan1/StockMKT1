@@ -2,7 +2,7 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-tab1, tab2, tab3 = st.tabs(["product", "trademark", "Customer satisfaction & CSR"])
+tab1, tab2, tab3 = st.tabs(["Product", "Customer satisfaction & CSR", "Trademark"])
 
 with tab1:
    st.header('Product-related factor', divider='rainbow')
@@ -17,14 +17,6 @@ with tab1:
    col7.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009). Evaluating the financial impact of branding using trademarks: A framework and empirical evidence. Journal of Marketing, 73(6), 154-166.")
 
 with tab2:
-   st.header('trademark', divider='rainbow')
-   my_slider6 = st.slider("a brand-association trade mark",0,10,0,1)
-   if my_slider:f"stock price will change by {my_slider6 * 0.3}%"
-   col4, col5 = st.columns(2)
-   col4.write("The parameter used in the prediction was developed on the basis of:")
-   col5.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009). Evaluating the financial impact of branding using trademarks: A framework and empirical evidence. Journal of Marketing, 73(6), 154-166.")
-
-with tab3:
    st.header('Customer satisfaction & CSR', divider='rainbow')
    my_slider = st.slider("Customer satisfaction",0,100,0,1)
    my_slider1 = st.slider("CSR",0,100,0,1)
@@ -32,6 +24,15 @@ with tab3:
    col6, col7 = st.columns(2)
    col6.write("The parameter used in the prediction was developed on the basis of the American Customer Satisfaction Index (ACSI), Fortune America's Most Admired Corporations (FAMA).")
    col7.write("Source: Luo, X., & Bhattacharya, C. B. (2006). Corporate social responsibility, customer satisfaction, and market value. Journal of marketing, 70(4), 1-18.")
+
+with tab3:
+   st.header('Trademark', divider='rainbow')
+   my_slider6 = st.slider("a brand-association trade mark",0,10,0,1)
+   if my_slider:f"stock price will change by {my_slider6 * 0.3}%"
+   col4, col5 = st.columns(2)
+   col4.write("The parameter used in the prediction was developed on the basis of:")
+   col5.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009). Evaluating the financial impact of branding using trademarks: A framework and empirical evidence. Journal of Marketing, 73(6), 154-166.")
+
 
 # ---- HIDE STREAMLIT STYLE ----
 hide_st_style = """
