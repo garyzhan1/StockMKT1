@@ -18,9 +18,9 @@ with tab1:
 
 with tab2:
    st.header('Customer satisfaction & CSR', divider='rainbow')
-   my_slider = st.slider("Customer satisfaction",0,100,0,1)
-   my_slider1 = st.slider("CSR",0,100,0,1)
-   if my_slider:f"for each unit of change in customer satisfaction or CSR, stock price will change by {my_slider * 17 + my_slider1 * 14}%"
+   my_slider7 = st.slider("Customer satisfaction",0,100,0,1)
+   my_slider8 = st.slider("CSR",0,100,0,1)
+   if my_slider:f"for each unit of change in customer satisfaction or CSR, stock price will change by {my_slider7 * 17 + my_slider8 * 14}%"
    col6, col7 = st.columns(2)
    col6.write("The parameter used in the prediction was developed on the basis of the American Customer Satisfaction Index (ACSI), Fortune America's Most Admired Corporations (FAMA).")
    col7.write("Source: Luo, X., & Bhattacharya, C. B. (2006). Corporate social responsibility, customer satisfaction, and market value. Journal of marketing, 70(4), 1-18.")
