@@ -2,7 +2,7 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-tab1, tab2, tab3 = st.tabs(["product", "trademark", "cs"])
+tab1, tab2, tab3 = st.tabs(["product", "trademark", "Customer satisfaction & CSR"])
 
 with tab1:
    st.header('Product-related factor', divider='rainbow')
