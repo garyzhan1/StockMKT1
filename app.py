@@ -5,7 +5,7 @@ import numpy as np
 tab1, tab2, tab3 = st.tabs(["product", "trademark", "cs"])
 
 with tab1:
-   st.header('Product-related factors', divider='rainbow')
+   st.header('Product-related factor', divider='rainbow')
    my_slider = st.slider("a pioneering innovation",0,10,0,1)
    my_slider2 = st.slider("new market entries",0,20,0,1)
    my_slider3 = st.slider("minor updates",0,100,0,1)
