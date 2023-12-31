@@ -33,27 +33,6 @@ with tab3:
    col6.write("The parameter used in the prediction was developed on the basis of the American Customer Satisfaction Index (ACSI), Fortune America's Most Admired Corporations (FAMA).")
    col7.write("Source: Luo, X., & Bhattacharya, C. B. (2006). Corporate social responsibility, customer satisfaction, and market value. Journal of marketing, 70(4), 1-18.")
 
-
-col1, col2, col3 = st.columns(3)
-col1.metric("cusotmer satisfaction", "1.5", "5%")
-col2.metric("brand", "2.5", "-8%")
-col3.metric("new product development", "3", "4%")
-
-
-
-st.write("data in a table:")
-st.write(pd.DataFrame({
-    'first column': [1, my_slider, 5, 7],
-    'second column': [10, 30, my_slider2, 70]
-}))
-
-
-chart_data = pd.DataFrame(
-    np.random.randn(20, 3),
-    columns=['a', 'b', 'c'])
-
-st.line_chart(chart_data)
-
 # ---- HIDE STREAMLIT STYLE ----
 hide_st_style = """
             <style>
