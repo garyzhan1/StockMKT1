@@ -5,7 +5,7 @@ import numpy as np
 
 my_slider = st.slider("人机测试：如果你是人类，请滑到右边，否则无法使用本工具",0,1,0,1)
 
-Armstock股价预测工具：产品、消费者、品牌对股价的影响
+st.header('Armstock股价预测工具：产品、消费者、品牌对股价的影响')
 
 tab1, tab2, tab3 = st.tabs(["Product", "Customer satisfaction & CSR", "Trademark"])
 
