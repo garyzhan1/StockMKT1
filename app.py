@@ -5,11 +5,13 @@ import numpy as np
 
 my_slider = st.slider("人机测试：如果你是人类，请滑到右边，否则无法使用本工具",0,1,0,1)
 
+Armstock股价预测工具：产品、消费者、品牌对股价的影响
+
 tab1, tab2, tab3 = st.tabs(["Product", "Customer satisfaction & CSR", "Trademark"])
 
 with tab1:
    st.header('Product-related factor', divider='rainbow')
-   my_slider1 = st.slider("a pioneering innovation *",0,10,0,1)
+   my_slider1 = st.slider("a pioneering innovation",0,10,0,1)
    my_slider2 = st.slider("new market entries",0,20,0,1)
    my_slider3 = st.slider("minor updates",0,100,0,1)
    my_slider4 = st.slider("advertising for new product introduction (million USD)",0,200,0,1)
@@ -17,7 +19,7 @@ with tab1:
    with st.container(border=True):
       if my_slider:f"stock price will change by {my_slider1 * 4.28 + my_slider2 * 0.98 + my_slider3 * 0.55 + my_slider4 * 0.01 + my_slider5 * 4.2}%"
    col6, col7 = st.columns(2)
-   col6.write("The parameter used in the prediction was developed on the basis of:")
+   col6.write("The parameter used in the prediction was developed on the basis of:预测模型中的参数来自右边这篇论文：")
    col7.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009). Evaluating the financial impact of branding using trademarks: A framework and empirical evidence. Journal of Marketing, 73(6), 154-166.")
 
 with tab2:
@@ -27,7 +29,7 @@ with tab2:
    with st.container(border=True):
       if my_slider:f"for each unit of change in customer satisfaction or CSR, stock price will change by {my_slider7 * 17 + my_slider8 * 14}%"
    col6, col7 = st.columns(2)
-   col6.write("The parameter used in the prediction was developed on the basis of the American Customer Satisfaction Index (ACSI), Fortune America's Most Admired Corporations (FAMA).")
+   col6.write("The parameter used in the prediction was developed on the basis of the American Customer Satisfaction Index (ACSI), Fortune America's Most Admired Corporations (FAMA).预测模型中的参数来自美国消费者满意度指数和福布斯美国最受赞赏公司榜单")
    col7.write("Source: Luo, X., & Bhattacharya, C. B. (2006). Corporate social responsibility, customer satisfaction, and market value. Journal of marketing, 70(4), 1-18.")
 
 with tab3:
