@@ -10,7 +10,7 @@ tab1, tab2, tab3 = st.tabs(["Product产品", "Customer satisfaction & CSR消费�
 
 with tab1:
    st.header('Product-related factor产品相关变量', divider='rainbow')
-   my_slider1 = st.slider("a pioneering innovation开创性创新的数量",0,10,0,1)
+   my_slider1 = st.slider("a pioneering innovation开创性创新的数量",0,20,0,1)
    my_slider2 = st.slider("new market entries进入了几个新产品市场",0,20,0,1)
    my_slider3 = st.slider("minor updates微创新的数量",0,100,0,1)
    my_slider4 = st.slider("advertising for new product introduction (million USD) 用于新产品推广的广告费（百万美金）",0,200,0,1)
@@ -33,7 +33,7 @@ with tab2:
 
 with tab3:
    st.header('Trademark 商标', divider='rainbow')
-   my_slider6 = st.slider("number of trademarks specifying brand attribute or image 带有品牌属性或形象的商标数量",0,10,0,1)
+   my_slider6 = st.slider("number of trademarks specifying brand attribute or image 带有品牌属性或形象的商标数量",0,50,0,1)
    with st.container(border=True):
       if my_slider:f"stock price will change by股价将会变动 {my_slider6 * 0.3}%"
 
