@@ -38,7 +38,7 @@ with tab3:
       if my_slider:f"stock price will change by股价将会变动 {my_slider6 * 0.3}%"
 
    col4, col5 = st.columns(2)
-   col4.write("The parameter used in the prediction was developed on the basis of:")
+   col4.write("The parameter used in the prediction was developed on the basis of: 预测模型中的参数来自论文：")
    col5.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009). Evaluating the financial impact of branding using trademarks: A framework and empirical evidence. Journal of Marketing, 73(6), 154-166.")
 
 
