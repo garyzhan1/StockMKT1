@@ -22,7 +22,7 @@ with tab1:
    col7.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009). Evaluating the financial impact of branding using trademarks: A framework and empirical evidence. Journal of Marketing, 73(6), 154-166.")
 
 with tab2:
-   st.header('Customer satisfaction & CSR', divider='rainbow')
+   st.header('Customer satisfaction & CSR消费者满意度和企业社会责任', divider='rainbow')
    my_slider7 = st.slider("Customer satisfaction 消费者满意度",0,100,0,1)
    my_slider8 = st.slider("CSR 企业社会责任",0,100,0,1)
    with st.container(border=True):
