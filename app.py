@@ -3,7 +3,7 @@ import streamlit as st  # pip install streamlit
 import numpy as np
 
 
-my_slider = st.slider("人机测试",我是计算机,我是人类,0,1)
+my_slider = st.slider("人机测试",0,1,0,1)
 
 tab1, tab2, tab3 = st.tabs(["Product", "Customer satisfaction & CSR", "Trademark"])
 
