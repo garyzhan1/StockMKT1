@@ -6,7 +6,7 @@ st.header('Armstock上市公司股价预测工具：产品、消费者、品牌�
 
 my_slider = st.slider("人机测试：如果你是人类，请滑到右边，否则无法使用本工具",0,1,0,1)
 
-st.wirte('请根据您关注的上市公司情况选择以下各维度的数值，股价变化将展示在本页下方')
+st.write('请根据您关注的上市公司情况选择以下各维度的数值，股价变化将展示在本页下方')
 
 tab1, tab2, tab3 = st.tabs(["Product产品", "Customer satisfaction & CSR消费者满意度和企业社会责任", "Trademark商标"])
 
