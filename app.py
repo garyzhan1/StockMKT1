@@ -2,7 +2,7 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-st.header('Armstock股价预测工具：产品、消费者、品牌对股价的影响')
+st.header('Armstock上市公司股价预测工具：产品、消费者、品牌对股价的影响')
 
 my_slider = st.slider("人机测试：如果你是人类，请滑到右边，否则无法使用本工具",0,1,0,1)
 
