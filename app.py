@@ -2,13 +2,13 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-st.header('Armstock上市公司股价预测工具：产品、消费者、品牌对股价的影响')
+st.header('Armstock: A Tool for Stock Price Prediction with Marketing Metrics上市公司股价预测工具：产品、消费者、品牌对股价的影响')
 
 my_slider = st.slider("人机测试：如果你是人类，请滑到右边，否则无法使用本工具",0,1,0,1)
 
 st.write('请根据您关注的上市公司情况选择以下各维度的数值，股价变化将展示在本页下方')
 
-tab1, tab2, tab3 = st.tabs(["Product产品", "消费者满意度和CSR", "Trademark商标"])
+tab1, tab2, tab3 = st.tabs(["Product", "Customer satisfaction & CSR", "Brand & Trademark", "Advertising"])
 
 with tab1:
    st.header('Product-related factor产品相关变量', divider='rainbow')
@@ -24,11 +24,11 @@ with tab1:
    col7.write("Krasnikov, A., Mishra, S., & Orozco, D. (2009). Evaluating the financial impact of branding using trademarks: A framework and empirical evidence. Journal of Marketing, 73(6), 154-166.")
 
 with tab2:
-   st.header('Customer satisfaction & CSR消费者满意度和企业社会责任', divider='rainbow')
-   my_slider7 = st.slider("Customer satisfaction 消费者满意度",0,100,0,1)
-   my_slider8 = st.slider("CSR 企业社会责任",0,100,0,1)
+   st.header('Customer satisfaction & CSR', divider='rainbow')
+   my_slider7 = st.slider("Customer satisfaction",0,100,0,1)
+   my_slider8 = st.slider("CSR",0,100,0,1)
    with st.container(border=True):
-      if my_slider:f"for each unit of change in customer satisfaction or CSR, stock price will change by 股价将会变动 {my_slider7 * 17 + my_slider8 * 14}%"
+      if my_slider:f"for each unit of change in customer satisfaction or CSR, stock price will change by {my_slider7 * 17 + my_slider8 * 14}%"
    col6, col7 = st.columns(2)
    col6.write("The parameter used in the prediction was developed on the basis of the American Customer Satisfaction Index (ACSI), Fortune America's Most Admired Corporations (FAMA).预测模型中的参数来自美国消费者满意度指数和福布斯美国最受赞赏公司榜单")
    col7.write("Source: Luo, X., & Bhattacharya, C. B. (2006). Corporate social responsibility, customer satisfaction, and market value. Journal of marketing, 70(4), 1-18.")
