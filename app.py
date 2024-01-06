@@ -8,7 +8,7 @@ my_slider = st.slider("Human-Robot Testing: If you are a human, please slide to 
 
 st.write('Please select the values for the following dimensions based on the situation of the listed company you are interested in, and the changes in stock prices will be displayed at the bottom of this page')
 
-tab1, tab2, tab3, tab4 = st.tabs(["Product", "Customer satisfaction & CSR", "Brand & Trademark", "Advertising"])
+tab1, tab2, tab3, tab4 = st.tabs(["Product", "Customer satisfaction & CSR", "Brand", "Advertising"])
 
 with tab1:
    st.header('Product-related factor', divider='rainbow')
