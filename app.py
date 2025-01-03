@@ -2,7 +2,7 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-st.header('Armstock: A Tool for Stock Price Prediction with Marketing Metrics')
+st.header('股价预测')
 
 my_slider = st.slider("Human-Robot Testing: If you are a human, please slide to the right. Otherwise you will not be able to use this tool",0,1,0,1)
 
