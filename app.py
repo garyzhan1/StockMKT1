@@ -23,7 +23,7 @@ with tab0:
    
    # Create sliders for customer satisfaction and CSR
    my_slider9 = st.slider("CS", 0, 100, 0, 1)
-   my_slider10 = st.slider("企业社会责任", 0, 100, 0, 1)
+   my_slider10 = st.slider("erewr", 0, 100, 0, 1)
    
    # Create a container to display the result
    with st.container(border=True):
