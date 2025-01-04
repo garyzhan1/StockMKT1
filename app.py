@@ -1,7 +1,7 @@
 import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
-import matplotlib.pyplot as plt
+
 st.header('股价预测')
 
 my_slider = st.slider("如果是人类，请向右划动",0,1,0,1)
@@ -41,18 +41,6 @@ with tab0:
       col6, col7 = st.columns(2)
       col6.write("The parameter used in the prediction was developed on the basis of the American Customer Satisfaction Index (ACSI) and Fortune America's Most Admired Corporations (FAMA).")
       col7.write("Source: Luo, X., & Bhattacharya, C. B. (2006). Corporate social responsibility, customer satisfaction, and market value. Journal of marketing, 70(4), 1-18.")
-
-  # Create a curve chart in the right column
-   with col2.container():
-      x = np.linspace(0, 100, 100)
-      y = np.sin(x / 10) * x / 10
-      fig, ax = plt.subplots(figsize=(6, 6))
-      ax.plot(x, y, color='blue', linewidth=2)
-      ax.set_title('股价预测曲线')
-      ax.set_xlabel('净资产收益率')
-      ax.set_ylabel('增长率')
-      ax.grid(True)
-      st.pyplot(fig)
       
 with tab1:
    st.header('Product-related factor', divider='rainbow')
