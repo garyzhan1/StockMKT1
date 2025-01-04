@@ -30,7 +30,7 @@ with tab0:
       # Check if the sliders have been moved
       if my_slider9 or my_slider10:
          # Display the result
-         st.write(f"For each unit of change in customer satisfaction or CSR, {firm_name} ({stock_code}) will change by {my_slider7 * 10 + my_slider8 * 10}%")
+         st.write(f"For each unit of change in customer satisfaction or CSR, {firm_name} ({stock_code}) will change by {my_slider9 * 10 + my_slider10 * 10}%")
    
    # Create columns to display additional information
    col6, col7 = st.columns(2)
