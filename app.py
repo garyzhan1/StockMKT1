@@ -22,8 +22,8 @@ with tab0:
       stock_code = col2.text_input("股票代码")
    
    # Create sliders for customer satisfaction and CSR
-   my_slider9 = st.slider("CS", 0, 100, 0, 1)
-   my_slider10 = st.slider("erewr", 0, 100, 0, 1)
+   my_slider9 = st.slider("净资产收益率", 0, 100, 0, 1)
+   my_slider10 = st.slider("增长率", 0, 100, 0, 1)
    
    # Create a container to display the result
    with st.container(border=True):
