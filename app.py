@@ -22,15 +22,15 @@ with tab0:
       stock_code = col2.text_input("股票代码")
    
    # Create sliders for customer satisfaction and CSR
-   my_slider9 = st.slider("Customer satisfaction", 0, 100, 0, 1)
-   my_slider10 = st.slider("CSR", 0, 100, 0, 1)
+   my_slider9 = st.slider("CS", 0, 100, 0, 1)
+   my_slider10 = st.slider("企业社会责任", 0, 100, 0, 1)
    
    # Create a container to display the result
    with st.container(border=True):
       # Check if the sliders have been moved
       if my_slider9 or my_slider10:
          # Display the result
-         st.write(f"For each unit of change in customer satisfaction or CSR, {firm_name} ({stock_code}) will change by {my_slider7 * 17 + my_slider8 * 14}%")
+         st.write(f"For each unit of change in customer satisfaction or CSR, {firm_name} ({stock_code}) will change by {my_slider7 * 10 + my_slider8 * 10}%")
    
    # Create columns to display additional information
    col6, col7 = st.columns(2)
