@@ -1,7 +1,7 @@
 import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
-
+import matplotlib.pyplot as plt
 st.header('股价预测')
 
 my_slider = st.slider("如果是人类，请向右划动",0,1,0,1)
