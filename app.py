@@ -8,7 +8,7 @@ my_slider = st.slider("如果是人类，请向右划动",0,1,0,1)
 
 st.write('根据上市公司情况输入数值，股价预测值在页面底部')
 
-tab0, tab1, tab2, tab3, tab4 = st.tabs(["综合"，"产品", "客户满意度和企业社会责任", "品牌", "广告"])
+tab0, tab1, tab2, tab3, tab4 = st.tabs(["综合", "产品", "客户满意度和企业社会责任", "品牌", "广告"])
 
 with tab0:
    st.header('综合', divider='rainbow')
