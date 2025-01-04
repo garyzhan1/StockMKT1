@@ -4,11 +4,11 @@ import numpy as np
 
 st.header('股价预测')
 
-my_slider = st.slider("Human-Robot Testing: If you are a human, please slide to the right. Otherwise you will not be able to use this tool",0,1,0,1)
+my_slider = st.slider("如果是人类，请向右划动",0,1,0,1)
 
-st.write('Please select the values for the following dimensions based on the situation of the listed company you are interested in, and the changes in stock prices will be displayed at the bottom of this page')
+st.write('根据上市公司情况输入数值，股价预测值在页面底部')
 
-tab1, tab2, tab3, tab4 = st.tabs(["Product", "Customer satisfaction & CSR", "Brand", "Advertising"])
+tab1, tab2, tab3, tab4 = st.tabs(["产品", "客户满意度和企业社会责任", "品牌", "广告"])
 
 with tab1:
    st.header('Product-related factor', divider='rainbow')
