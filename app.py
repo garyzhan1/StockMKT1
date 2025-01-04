@@ -25,14 +25,31 @@ with tab1:
 
 with tab2:
    st.header('Customer satisfaction & CSR', divider='rainbow')
-   my_slider7 = st.slider("Customer satisfaction",0,100,0,1)
-   my_slider8 = st.slider("CSR",0,100,0,1)
+   
+   # Create a container to hold the input fields
+   with st.container():
+      col1, col2 = st.columns(2)
+      
+      # Create input fields for firm name and stock code
+      firm_name = col1.text_input("Firm Name")
+      stock_code = col2.text_input("Stock Code")
+   
+   # Create sliders for customer satisfaction and CSR
+   my_slider7 = st.slider("Customer satisfaction", 0, 100, 0, 1)
+   my_slider8 = st.slider("CSR", 0, 100, 0, 1)
+   
+   # Create a container to display the result
    with st.container(border=True):
-      if my_slider:f"for each unit of change in customer satisfaction or CSR, stock price will change by {my_slider7 * 17 + my_slider8 * 14}%"
+      # Check if the sliders have been moved
+      if my_slider7 or my_slider8:
+         # Display the result
+         st.write(f"For each unit of change in customer satisfaction or CSR, {firm_name} ({stock_code}) will change by {my_slider7 * 17 + my_slider8 * 14}%")
+   
+   # Create columns to display additional information
    col6, col7 = st.columns(2)
    col6.write("The parameter used in the prediction was developed on the basis of the American Customer Satisfaction Index (ACSI) and Fortune America's Most Admired Corporations (FAMA).")
    col7.write("Source: Luo, X., & Bhattacharya, C. B. (2006). Corporate social responsibility, customer satisfaction, and market value. Journal of marketing, 70(4), 1-18.")
-
+   
 with tab3:
    st.header('Trademark', divider='rainbow')
    my_slider6 = st.slider("number of trademarks specifying brand attribute or image",0,50,0,1)
