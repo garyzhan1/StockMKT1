@@ -32,13 +32,9 @@ with tab0:
             # Calculate the result
          result = (my_slider9 * 10 + my_slider10 * 10)
    
-            # Display the result as a metric
          st.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", delta=f"{result}%")
-   
-            # Display the result as a progress bar
-         st.progress(result / 100)
-   
-            # Display the result as a gauge chart
+         # Limit the result to a maximum of 100 for the progress bar
+         st.progress(min(result, 100) / 100)
          col1, col2, col3 = st.columns([1, 1, 1])
          if result < 33:
                col1.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "低")
