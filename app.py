@@ -31,10 +31,11 @@ with tab0:
       if my_slider9 or my_slider10:
             # Calculate the result
          result = (my_slider9 * 10 + my_slider10 * 10)
-   
+         # Display the result as a metric
          st.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", delta=f"{result}%")
          # Limit the result to a maximum of 100 for the progress bar
-         st.progress(min(result, 100) / 100)
+         # Display the result as a progress bar
+         st.progress(result / 100)st.progress(min(result, 100) / 100)
          col1, col2, col3 = st.columns([1, 1, 1])
          if result < 33:
                col1.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "低")
@@ -45,7 +46,10 @@ with tab0:
          else:
                col3.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "高")
                col3.success("表现优秀")
-            
+                # Display the result as a panel
+         st.write(f"预测值总结：{firm_name} ({stock_code}) 的股价预测值为 {result}%")
+         st.info(f"这意味着 {firm_name} ({stock_code}) 的股价可能会上涨 {result}%")
+         
 with tab1:
    st.header('Product-related factor', divider='rainbow')
    my_slider1 = st.slider("a pioneering innovation",0,20,0,1)
