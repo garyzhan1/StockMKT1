@@ -26,30 +26,30 @@ with tab0:
    my_slider10 = st.slider("增长率", 0, 100, 0, 1)
    
  # Create a container to display the result
-    with st.container():
+   with st.container():
         # Check if the sliders have been moved
-        if my_slider9 or my_slider10:
+      if my_slider9 or my_slider10:
             # Calculate the result
-            result = (my_slider9 * 10 + my_slider10 * 10)
-
+         result = (my_slider9 * 10 + my_slider10 * 10)
+   
             # Display the result as a metric
-            st.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", delta=f"{result}%")
-
+         st.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", delta=f"{result}%")
+   
             # Display the result as a progress bar
-            st.progress(result / 100)
-
+         st.progress(result / 100)
+   
             # Display the result as a gauge chart
-            col1, col2, col3 = st.columns([1, 1, 1])
-            if result < 33:
-                col1.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "低")
-                col1.info("需要提高")
-            elif result < 66:
-                col2.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "中")
-                col2.warning("需要改进")
-            else:
-                col3.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "高")
-                col3.success("表现优秀")
-               
+         col1, col2, col3 = st.columns([1, 1, 1])
+         if result < 33:
+               col1.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "低")
+               col1.info("需要提高")
+         elif result < 66:
+               col2.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "中")
+               col2.warning("需要改进")
+         else:
+               col3.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "高")
+               col3.success("表现优秀")
+            
 with tab1:
    st.header('Product-related factor', divider='rainbow')
    my_slider1 = st.slider("a pioneering innovation",0,20,0,1)
