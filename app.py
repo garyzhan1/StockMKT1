@@ -8,7 +8,7 @@ my_slider = st.slider("如果是人类，请向右划动",0,1,0,1)
 
 st.write('根据上市公司情况输入数值，股价预测值在页面底部')
 
-tab0, tab1, tab2, tab3, tab4 = st.tabs(["综合", "产品", "客户满意度和企业社会责任", "品牌", "广告"])
+tab0, tab1, tab2, tab3, tab4 = st.tabs(["综合", "产品", "社会责任", "品牌", "广告"])
 
 with tab0:
    st.header('综合', divider='rainbow')
@@ -25,18 +25,31 @@ with tab0:
    my_slider9 = st.slider("净资产收益率", 0, 100, 0, 1)
    my_slider10 = st.slider("增长率", 0, 100, 0, 1)
    
-   # Create a container to display the result
-   with st.container(border=True):
-      # Check if the sliders have been moved
-      if my_slider9 or my_slider10:
-         # Display the result
-         st.write(f"For each unit of change in customer satisfaction or CSR, {firm_name} ({stock_code}) will change by {my_slider9 * 10 + my_slider10 * 10}%")
-   
-   # Create columns to display additional information
-   col6, col7 = st.columns(2)
-   col6.write("The parameter used in the prediction was developed on the basis of the American Customer Satisfaction Index (ACSI) and Fortune America's Most Admired Corporations (FAMA).")
-   col7.write("Source: Luo, X., & Bhattacharya, C. B. (2006). Corporate social responsibility, customer satisfaction, and market value. Journal of marketing, 70(4), 1-18.")
-      
+ # Create a container to display the result
+    with st.container():
+        # Check if the sliders have been moved
+        if my_slider9 or my_slider10:
+            # Calculate the result
+            result = (my_slider9 * 10 + my_slider10 * 10)
+
+            # Display the result as a metric
+            st.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", delta=f"{result}%")
+
+            # Display the result as a progress bar
+            st.progress(result / 100)
+
+            # Display the result as a gauge chart
+            col1, col2, col3 = st.columns([1, 1, 1])
+            if result < 33:
+                col1.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "低")
+                col1.info("需要提高")
+            elif result < 66:
+                col2.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "中")
+                col2.warning("需要改进")
+            else:
+                col3.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "高")
+                col3.success("表现优秀")
+               
 with tab1:
    st.header('Product-related factor', divider='rainbow')
    my_slider1 = st.slider("a pioneering innovation",0,20,0,1)
