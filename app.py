@@ -35,7 +35,7 @@ with tab0:
          st.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", delta=f"{result}%")
          # Limit the result to a maximum of 100 for the progress bar
          # Display the result as a progress bar
-         st.progress(result / 100)st.progress(min(result, 100) / 100)
+         st.progress(min(result, 100) / 100)
          col1, col2, col3 = st.columns([1, 1, 1])
          if result < 33:
                col1.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "低")
