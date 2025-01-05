@@ -35,7 +35,7 @@ with tab0:
             # Calculate the result
          result = (my_slider9 * 0.2 + my_slider10 * 0.15 + my_slider11 * 0.1 + my_slider12 * 0.12 + my_slider13 * 0.11 + my_slider14 * 0.08)
          # Display the result as a metric
-         st.metric(f"未来一年股价预测值", f"{result}%", delta=f"{result}%")
+         st.metric(f"预测值=", f"{result}%", delta=f"{result}%")
          # Limit the result to a maximum of 100 for the progress bar
          # Display the result as a progress bar
          st.progress(min(result, 100) / 100)
