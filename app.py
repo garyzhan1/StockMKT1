@@ -22,45 +22,33 @@ with tab0:
       stock_code = col2.text_input("股票代码")
    
    # Create sliders for customer satisfaction and CSR
-   my_slider9 = st.slider("净资产收益率", 0, 100, 0, 1)
-   my_slider10 = st.slider("增长率", 0, 100, 0, 1)
-   
+   my_slider9 = st.slider("客户满意度", 0, 100, 0, 1)
+   my_slider10 = st.slider("质量改进", 0, 100, 0, 1)
+   my_slider11 = st.slider("突破性创新", 0, 100, 0, 1)
+   my_slider12 = st.slider("新市场", 0, 100, 0, 1)
+   my_slider13 = st.slider("社会责任", 0, 100, 0, 1)
+   my_slider14 = st.slider("新注册商标", 0, 100, 0, 1)
  # Create a container to display the result
    with st.container():
         # Check if the sliders have been moved
       if my_slider9 or my_slider10:
             # Calculate the result
-         result = (my_slider9 * 10 + my_slider10 * 10)
+         result = (my_slider9 * 0.2 + my_slider10 * 0.15 + my_slider11 * 0.1 + my_slider12 * 0.12 + my_slider13 * 0.11 + my_slider14 * 0.08)
          # Display the result as a metric
-         st.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", delta=f"{result}%")
+         st.metric(f"{firm_name} ({stock_code}) 未来一年股价预测值", f"{result}%", delta=f"{result}%")
          # Limit the result to a maximum of 100 for the progress bar
          # Display the result as a progress bar
          st.progress(min(result, 100) / 100)
          col1, col2, col3 = st.columns([1, 1, 1])
-         if result < 33:
-               col1.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "低")
+         if result < 20:
+               col1.metric(f"{firm_name} ({stock_code}) 未来一年股价预测值", f"{result}%", "低")
                col1.info("需要提高")
-         elif result < 66:
-               col2.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "中")
+         elif result < 40:
+               col2.metric(f"{firm_name} ({stock_code}) 未来一年股价预测值", f"{result}%", "中")
                col2.warning("需要改进")
          else:
-               col3.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "高")
+               col3.metric(f"{firm_name} ({stock_code}) 未来一年股价预测值", f"{result}%", "高")
                col3.success("表现优秀")
-
-         # Display the result as a dashboard
-         st.subheader(f"{firm_name} ({stock_code}) 股价预测值仪表盘")
-         col1, col2 = st.columns([2, 1])
-         with col1:
-            st.write(f"预测值：{result}%")
-            st.write(f"净资产收益率：{my_slider9 * 10}%")
-            st.write(f"增长率：{my_slider10 * 10}%")
-         with col2:
-            if result < 33:
-               st.image("https://via.placeholder.com/100x100?text=Low")
-            elif result < 66:
-               st.image("https://via.placeholder.com/100x100?text=Medium")
-            else:
-               st.image("https://via.placeholder.com/100x100?text=High")
          
 with tab1:
    st.header('Product-related factor', divider='rainbow')
