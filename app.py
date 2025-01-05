@@ -35,19 +35,19 @@ with tab0:
             # Calculate the result
          result = (my_slider9 * 0.2 + my_slider10 * 0.15 + my_slider11 * 0.1 + my_slider12 * 0.12 + my_slider13 * 0.11 + my_slider14 * 0.08)
          # Display the result as a metric
-         st.metric(f"{firm_name} ({stock_code}) 未来一年股价预测值", f"{result}%", delta=f"{result}%")
+         st.metric(f"未来一年股价预测值", f"{result}%", delta=f"{result}%")
          # Limit the result to a maximum of 100 for the progress bar
          # Display the result as a progress bar
          st.progress(min(result, 100) / 100)
          col1, col2, col3 = st.columns([1, 1, 1])
          if result < 20:
-               col1.metric(f"{firm_name} ({stock_code}) 未来一年股价预测值", f"{result}%", "低")
-               col1.info("需要提高")
+               col1.metric(f"{firm_name} ({stock_code}) 未来一年", f"{result}%", "低")
+               col1.info("表现较差")
          elif result < 40:
-               col2.metric(f"{firm_name} ({stock_code}) 未来一年股价预测值", f"{result}%", "中")
-               col2.warning("需要改进")
+               col2.metric(f"{firm_name} ({stock_code}) 未来一年", f"{result}%", "中")
+               col2.warning("表现中等")
          else:
-               col3.metric(f"{firm_name} ({stock_code}) 未来一年股价预测值", f"{result}%", "高")
+               col3.metric(f"{firm_name} ({stock_code}) 未来一年", f"{result}%", "高")
                col3.success("表现优秀")
          
 with tab1:
