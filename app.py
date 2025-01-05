@@ -18,7 +18,7 @@ with tab0:
       col1, col2 = st.columns(2)
       
       # Create input fields for firm name and stock code
-      firm_name = col1.text_input("上司公司名称")
+      firm_name = col1.text_input("公司名称")
       stock_code = col2.text_input("股票代码")
    
    # Create sliders for customer satisfaction and CSR
@@ -46,9 +46,21 @@ with tab0:
          else:
                col3.metric(f"{firm_name} ({stock_code}) 股价预测值", f"{result}%", "高")
                col3.success("表现优秀")
-                # Display the result as a panel
-         st.write(f"预测值总结：{firm_name} ({stock_code}) 的股价预测值为 {result}%")
-         st.info(f"这意味着 {firm_name} ({stock_code}) 的股价可能会上涨 {result}%")
+
+         # Display the result as a dashboard
+         st.subheader(f"{firm_name} ({stock_code}) 股价预测值仪表盘")
+         col1, col2 = st.columns([2, 1])
+         with col1:
+            st.write(f"预测值：{result}%")
+            st.write(f"净资产收益率：{my_slider9 * 10}%")
+            st.write(f"增长率：{my_slider10 * 10}%")
+         with col2:
+            if result < 33:
+               st.image("https://via.placeholder.com/100x100?text=Low")
+            elif result < 66:
+               st.image("https://via.placeholder.com/100x100?text=Medium")
+            else:
+               st.image("https://via.placeholder.com/100x100?text=High")
          
 with tab1:
    st.header('Product-related factor', divider='rainbow')
