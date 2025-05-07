@@ -66,14 +66,6 @@ with tab1:
 with tab2:
    st.header('Customer satisfaction & CSR', divider='rainbow')
    
-   # Create a container to hold the input fields
-   with st.container():
-      col1, col2 = st.columns(2)
-      
-      # Create input fields for firm name and stock code
-      firm_name = col1.text_input("Firm Code")
-      stock_code = col2.text_input("Stock")
-   
    # Create sliders for customer satisfaction and CSR
    my_slider7 = st.slider("Customer satisfaction", 0, 100, 0, 1)
    my_slider8 = st.slider("CSR", 0, 100, 0, 1)
