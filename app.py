@@ -2,7 +2,7 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-st.header('Armstock: A Tool for Stock Price Prediction with Marketing MetricsAA')
+st.header('Armstock: A Tool for Stock Price Prediction with Marketing Metrics')
 
 my_slider = st.slider("Human-Robot Testing: If you are a human, please slide to the right. Otherwise you will not be able to use this tool",0,1,0,1)
 
@@ -18,8 +18,8 @@ with tab0:
       col1, col2 = st.columns(2)
       
       # Create input fields for firm name and stock code
-      firm_name = col1.text_input("firm name")
-      stock_code = col2.text_input("stock code")
+      firm_name = col1.text_input("Firm Name")
+      stock_code = col2.text_input("Stock Code")
    
    # Create sliders for customer satisfaction and CSR
    my_slider9 = st.slider("Customer satisfaction", 0, 100, 0, 1)
