@@ -2,32 +2,32 @@ import pandas as pd  # pip install pandas openpyxl
 import streamlit as st  # pip install streamlit
 import numpy as np
 
-st.header('股价预测')
+st.header('Armstock: A Tool for Stock Price Prediction with Marketing Metrics')
 
-my_slider = st.slider("如果是人类，请向右划动",0,1,0,1)
+my_slider = st.slider("Human-Robot Testing: If you are a human, please slide to the right. Otherwise you will not be able to use this tool",0,1,0,1)
 
-st.write('根据上市公司情况输入数值，股价预测值在页面底部')
+st.write('Please select the values for the following dimensions based on the situation of the listed company you are interested in, and the changes in stock prices will be displayed at the bottom of this page')
 
-tab0, tab1, tab2, tab3, tab4 = st.tabs(["综合", "产品", "社会责任", "品牌", "广告"])
+tab0, tab1, tab2, tab3, tab4 = st.tabs(["Overall", "Product", "Customer satisfaction & CSR", "Brand", "Advertising"])
 
 with tab0:
-   st.header('综合', divider='rainbow')
+   st.header('Overall', divider='rainbow')
    
    # Create a container to hold the input fields
    with st.container():
       col1, col2 = st.columns(2)
       
       # Create input fields for firm name and stock code
-      firm_name = col1.text_input("公司名称")
-      stock_code = col2.text_input("股票代码")
+      firm_name = col1.text_input("firm name")
+      stock_code = col2.text_input("stock code")
    
    # Create sliders for customer satisfaction and CSR
-   my_slider9 = st.slider("客户满意度", 0, 100, 0, 1)
-   my_slider10 = st.slider("质量改进", 0, 100, 0, 1)
-   my_slider11 = st.slider("突破性创新", 0, 100, 0, 1)
-   my_slider12 = st.slider("新市场", 0, 100, 0, 1)
-   my_slider13 = st.slider("社会责任", 0, 100, 0, 1)
-   my_slider14 = st.slider("新注册商标", 0, 100, 0, 1)
+   my_slider9 = st.slider("Customer satisfaction", 0, 100, 0, 1)
+   my_slider10 = st.slider("Quality improvement", 0, 100, 0, 1)
+   my_slider11 = st.slider("A pioneering innovation", 0, 100, 0, 1)
+   my_slider12 = st.slider("New market entries", 0, 100, 0, 1)
+   my_slider13 = st.slider("CSR", 0, 100, 0, 1)
+   my_slider14 = st.slider("Newly registered trademarks", 0, 100, 0, 1)
  # Create a container to display the result
    with st.container():
         # Check if the sliders have been moved
@@ -35,20 +35,20 @@ with tab0:
             # Calculate the result
          result = (my_slider9 * 0.2 + my_slider10 * 0.15 + my_slider11 * 0.1 + my_slider12 * 0.12 + my_slider13 * 0.11 + my_slider14 * 0.08)
          # Display the result as a metric
-         st.metric(f"预测值=", f"{result}%", delta=f"{result}%")
+         st.metric(f"Predicted value=", f"{result}%", delta=f"{result}%")
          # Limit the result to a maximum of 100 for the progress bar
          # Display the result as a progress bar
          st.progress(min(result, 100) / 100)
          col1, col2, col3 = st.columns([1, 1, 1])
          if result < 20:
-               col1.metric(f"{firm_name} ({stock_code}) 未来一年", f"{result}%", "低")
-               col1.info("表现较差")
+               col1.metric(f"{firm_name} ({stock_code}) in next year", f"{result}%", "low")
+               col1.info("bad performance")
          elif result < 40:
-               col2.metric(f"{firm_name} ({stock_code}) 未来一年", f"{result}%", "中")
-               col2.warning("表现中等")
+               col2.metric(f"{firm_name} ({stock_code}) in next year", f"{result}%", "medium")
+               col2.warning("medium performance")
          else:
-               col3.metric(f"{firm_name} ({stock_code}) 未来一年", f"{result}%", "高")
-               col3.success("表现优秀")
+               col3.metric(f"{firm_name} ({stock_code}) in next year", f"{result}%", "high")
+               col3.success("good performance")
          
 with tab1:
    st.header('Product-related factor', divider='rainbow')
