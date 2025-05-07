@@ -8,7 +8,7 @@ my_slider = st.slider("Human-Robot Testing: If you are a human, please slide to 
 
 st.write('Please select the values for the following dimensions based on the situation of the listed company you are interested in, and the changes in stock prices will be displayed at the bottom of this page')
 
-tab0, tab1, tab2, tab3, tab4 = st.tabs(["Overall", "Product", "Customer satisfaction & CSR", "Brand", "Advertising"])
+tab0, tab1, tab2, tab3 = st.tabs(["Overall", "Product", "Customer satisfaction & CSR", "Trademarket"])
 
 with tab0:
    st.header('Overall', divider='rainbow')
@@ -51,7 +51,7 @@ with tab0:
                col3.success("good performance")
          
 with tab1:
-   st.header('Product-related factor', divider='rainbow')
+   st.header('Product', divider='rainbow')
    my_slider1 = st.slider("a pioneering innovation",0,20,0,1)
    my_slider2 = st.slider("new market entries",0,20,0,1)
    my_slider3 = st.slider("minor updates",0,100,0,1)
