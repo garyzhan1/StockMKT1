@@ -18,16 +18,16 @@ with tab0:
       col1, col2 = st.columns(2)
       
       # Create input fields for firm name and stock code
-      firm_name = col1.text_input("Firm Code1")
-      stock_code = col2.text_input("Stock1")
+      firm_name = col1.text_input("Firm Code")
+      stock_code = col2.text_input("Stock")
    
    # Create sliders for customer satisfaction and CSR
    my_slider9 = st.slider("Customer satisfaction level", 0, 100, 0, 1)
-   my_slider10 = st.slider("qaulity improvement1", 0, 100, 0, 1)
-   my_slider11 = st.slider("A pioneering innovation1", 0, 100, 0, 1)
-   my_slider12 = st.slider("new market entries1", 0, 100, 0, 1)
-   my_slider13 = st.slider("CSR1", 0, 100, 0, 1)
-   my_slider14 = st.slider("Newly registered trademarks1", 0, 100, 0, 1)
+   my_slider10 = st.slider("qaulity improvement", 0, 100, 0, 1)
+   my_slider11 = st.slider("A pioneering innovation", 0, 100, 0, 1)
+   my_slider12 = st.slider("new market entries", 0, 100, 0, 1)
+   my_slider13 = st.slider("CSR", 0, 100, 0, 1)
+   my_slider14 = st.slider("Newly registered trademarks", 0, 100, 0, 1)
  # Create a container to display the result
    with st.container():
         # Check if the sliders have been moved
@@ -42,13 +42,13 @@ with tab0:
          col1, col2, col3 = st.columns([1, 1, 1])
          if result < 20:
                col1.metric(f"{firm_name} ({stock_code}) in next year", f"{result}%", "low")
-               col1.info("bad performance")
+               col1.info("C grade")
          elif result < 40:
                col2.metric(f"{firm_name} ({stock_code}) in next year", f"{result}%", "medium")
-               col2.warning("medium performance")
+               col2.warning("B grade")
          else:
                col3.metric(f"{firm_name} ({stock_code}) in next year", f"{result}%", "high")
-               col3.success("good performance")
+               col3.success("A grade")
          
 with tab1:
    st.header('Product', divider='rainbow')
