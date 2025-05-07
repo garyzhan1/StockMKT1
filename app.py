@@ -22,7 +22,7 @@ with tab0:
       stock_code = col2.text_input("Stock1")
    
    # Create sliders for customer satisfaction and CSR
-   my_slider9 = st.slider("Customer satisfaction1", 0, 100, 0, 1)
+   my_slider9 = st.slider("Customer satisfaction level", 0, 100, 0, 1)
    my_slider10 = st.slider("qaulity improvement1", 0, 100, 0, 1)
    my_slider11 = st.slider("A pioneering innovation1", 0, 100, 0, 1)
    my_slider12 = st.slider("new market entries1", 0, 100, 0, 1)
