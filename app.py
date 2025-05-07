@@ -23,9 +23,9 @@ with tab0:
    
    # Create sliders for customer satisfaction and CSR
    my_slider9 = st.slider("Customer satisfaction", 0, 100, 0, 1)
-   my_slider10 = st.slider("Quality improvement", 0, 100, 0, 1)
+   my_slider10 = st.slider("qaulity improvement", 0, 100, 0, 1)
    my_slider11 = st.slider("A pioneering innovation", 0, 100, 0, 1)
-   my_slider12 = st.slider("New market entries", 0, 100, 0, 1)
+   my_slider12 = st.slider("new market entries", 0, 100, 0, 1)
    my_slider13 = st.slider("CSR", 0, 100, 0, 1)
    my_slider14 = st.slider("Newly registered trademarks", 0, 100, 0, 1)
  # Create a container to display the result
