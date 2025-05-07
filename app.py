@@ -67,7 +67,7 @@ with tab2:
    st.header('Customer satisfaction & CSR', divider='rainbow')
    
    # Create sliders for customer satisfaction and CSR
-   my_slider7 = st.slider("Customer satisfaction", 0, 100, 0, 1)
+   my_slider7 = st.slider("Customer satisfaction level", 0, 100, 0, 1)
    my_slider8 = st.slider("CSR", 0, 100, 0, 1)
    
    # Create a container to display the result
