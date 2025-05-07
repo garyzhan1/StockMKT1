@@ -18,8 +18,8 @@ with tab0:
       col1, col2 = st.columns(2)
       
       # Create input fields for firm name and stock code
-      firm_name = col1.text_input("Firm Name")
-      stock_code = col2.text_input("Stock Code")
+      firm_name = col1.text_input("Firm Code")
+      stock_code = col2.text_input("Stock")
    
    # Create sliders for customer satisfaction and CSR
    my_slider9 = st.slider("Customer satisfaction", 0, 100, 0, 1)
